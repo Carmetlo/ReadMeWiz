@@ -13,7 +13,7 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: 'Please provide a description of your project.',
+        message: 'Please provide a brief description of your project.',
     },
     {
         type: 'input',
@@ -58,6 +58,7 @@ function writeToFile(fileName, data) {
     try {
         fs.writeFileSync(fileName, generateMarkdown(data));
         console.log('README.md successfully created!');
+        //I added some catches for errors
     } catch (err) {
         console.error(err);
     }
@@ -65,11 +66,12 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
+    //this tags the inquirer to use the question data to create the readme file =
     inquirer.prompt(questions)
     .then((data) => {
         const markdown = generateMarkdown(data);
         writeToFile('.README.md', data);
-    })
+    })//I added some catches for errors
     .catch((err) => console.error(err));
 }
 
