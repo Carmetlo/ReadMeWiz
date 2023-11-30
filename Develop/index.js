@@ -55,17 +55,19 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) =>
-        err ? console.error(err) : console.log('Success!')
-    );
+    try {fs.writeFileSync(fileName, generateMarkdown(answers));
+        console.log('README.md successfully created!');
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
     .then((data) => {
-        writeToFile('README.md', generateMarkdown(data));
-    });
+        writeToFile('README.md', generateMarkdown(answers));
+    })
     .catch((err) => console.error(err));
 }
 
