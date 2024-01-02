@@ -17,4 +17,4 @@ License
 This project is licensed under the MIT license.
 
 Questions
-If you have any questions about the repo, open an issue or contact me directly at michaelcarmelo22@gmail.com. You can find more of my work at Carmetlo at gihub.
+If you have any questions about the repo, open an issue or contact me directly at michaelcarmelo22@gmail.com. You can find more of my work at Carmetlo at Git hub.
